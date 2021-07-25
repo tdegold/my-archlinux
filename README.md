@@ -8,5 +8,5 @@ this repo contains scripts related to my personal use of arch linux
 | *Files*       | ---                                                       |
 | `maintenance` | commands I execute regularly to keep my system up to date |
 | *Folders*     | ---                                                       |
-| `config/`     | contains various configuration files                      |
+|               |                                                           |
 
