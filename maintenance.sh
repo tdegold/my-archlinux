@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Update
 sudo pacman -Syu
 
