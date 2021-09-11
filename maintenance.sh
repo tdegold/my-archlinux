@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# Script name: maintenance.sh
+# Description: Script for keeping the system up to date
+# GitHub: https://github.com/tdegold/my-archlinux/
+# Contributors: Tim Degold
 
 # Update
 sudo pacman -Syu
