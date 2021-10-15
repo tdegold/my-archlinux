@@ -62,6 +62,7 @@ declare -a packages=(
     acpi 
     acpi_call 
     terminus-font
+    tlp
 )
 
 for i in "${packages[@]}"
@@ -71,3 +72,6 @@ done
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
+
+systemctl enable tlp
+systemctl enable NetworkManager
