@@ -18,3 +18,13 @@ echo "label: gpt
 
 mkfs.fat -F32 ${DISK}${DISK_SUFIX}1
 mkfs.ext4 ${DISK}${DISK_SUFIX}2
+
+mount ${DISK}${DISK_SUFIX}2 /mnt
+mkdir -p /mnt/boot/efi
+mount ${DISK}${DISK_SUFIX}1 /mnt/boot/efi
+
+pacstrap /mnt base base-devel linux linux-firmware vim git
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt
