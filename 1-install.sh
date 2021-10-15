@@ -36,7 +36,7 @@ echo 'Set root password'
 passwd
 
 useradd -m ${username}
-echo 'Set password for user $username'
+echo 'Set password for user ${username}'
 passwd tim
 usermod -aG wheel ${username}
 EDITOR=vim visudo
@@ -68,7 +68,7 @@ declare -a packages=(
 
 for i in "${packages[@]}"
 do
-   pacman -S i --needed --no-confirm
+   pacman -S i --needed --noconfirm
 done
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
