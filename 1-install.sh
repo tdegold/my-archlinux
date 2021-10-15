@@ -32,9 +32,44 @@ echo 127.0.0.1  localhost >> /etc/hosts
 echo ::1		localhost >> /etc/hosts
 echo 127.0.1.1	${hostname} >> /etc/hosts
 
-echo root:${root_password} | chpasswd
+echo 'Set root password'
+passwd
 
 useradd -m ${username}
-echo '$username:$user_password' | chpasswd
+echo 'Set password for user $username'
+passwd tim
 usermod -aG wheel ${username}
 EDITOR=vim visudo
+
+packages = (
+    grub 
+    efibootmgr 
+    networkmanager 
+    network-manager-applet 
+    dialog 
+    wpa_supplicant 
+    mtools 
+    dosfstools 
+    avahi 
+    xdg-user-dirs 
+    xdg-utils 
+    gvfs 
+    gvfs-smb 
+    nfs-utils 
+    inetutils 
+    dnsutils 
+    bash-completion 
+    rsync 
+    reflector 
+    acpi 
+    acpi_call 
+    terminus-font
+)
+
+for i in "${packages[@]}"
+do
+   pacman -S i --needed --no-confirm
+done
+
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
