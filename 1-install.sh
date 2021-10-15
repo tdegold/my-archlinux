@@ -35,4 +35,4 @@ echo root:${root_password} | chpasswd
 useradd -m ${username}
 echo '$username:$user_password' | chpasswd
 usermod -aG wheel ${username}
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers.tmp
+EDITOR=vim visudo
