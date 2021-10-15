@@ -23,7 +23,7 @@ mount ${disk}${disk_sufix}2 /mnt
 mkdir -p /mnt/boot/efi
 mount ${disk}${disk_sufix}1 /mnt/boot/efi
 
-pacstrap /mnt base base-devel linux linux-firmware vim git
+pacstrap /mnt base base-devel linux linux-headers linux-firmware vim git
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
