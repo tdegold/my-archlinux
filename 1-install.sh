@@ -12,6 +12,8 @@ locale=${lang}UTF-8
 keymap=de-latin1
 hostname=arch
 root_password=password
+username=tim
+user_password=0406
 
 ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime
 
