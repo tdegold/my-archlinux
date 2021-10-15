@@ -33,6 +33,6 @@ echo 127.0.1.1	${hostname} >> /etc/hosts
 echo root:${root_password} | chpasswd
 
 useradd -m ${username}
-echo ${username}:${user_password} | chpasswd
+echo '$username:$user_password' | chpasswd
 usermod -aG wheel ${username}
-echo %wheel ALL=(ALL) ALL >> /etc/sudoers.tmp
+echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers.tmp
