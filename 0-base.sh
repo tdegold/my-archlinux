@@ -17,3 +17,4 @@ echo "label: gpt
       " | sfdisk --force $DISK
 
 mkfs.fat -F32 ${DISK}${DISK_SUFIX}1
+mkfs.ext4 ${DISK}${DISK_SUFIX}2
