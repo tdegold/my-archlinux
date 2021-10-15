@@ -9,12 +9,14 @@
 
 git clone https://aur.archlinux.org/yay
 cd yay
-makepkg -si
+makepkg -si --noconfirm
 cd ..
 rm -rf yay
 
 declare -a packages=(
     terminator
+    pulseaudio
+    pulseaudio-qt
     brave-bin
     typora
     multimc-bin
@@ -28,7 +30,7 @@ declare -a packages=(
     vlc
     git
     xorg
-    plasma-desktop
+    plasma
     sddm
 )
 
