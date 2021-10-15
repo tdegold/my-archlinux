@@ -41,7 +41,7 @@ passwd tim
 usermod -aG wheel ${username}
 EDITOR=vim visudo
 
-packages = (
+declare -a packages = (
     grub 
     efibootmgr 
     networkmanager 
