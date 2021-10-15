@@ -6,33 +6,33 @@
 # Contributors: Tim Degold
 
 # variables #
-timezone=/Europe/Vienna
-lang=en_US.UTF-8
-locale=${lang}UTF-8
-keymap=de-latin1
-hostname=arch
-root_password=password
-username=tim
-user_password=0406
+timezone="/Europe/Vienna"
+lang="en_US.UTF-8"
+locale="${lang} UTF-8"
+keymap="de-latin1"
+hostname="arch"
+root_password="password"
+username="tim"
+user_password="0406"
 
 ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime
 
 hwclock --systohc
 
-echo ${locale} >> /etc/locale.gen
+echo "${locale}" >> /etc/locale.gen
 locale-gen
 
-echo LANG=${lang} >> /etc/locale.conf
+echo "LANG=${lang}" >> /etc/locale.conf
 
-echo KEYMAP=${keymap} >> /etc/vconsole.conf
+echo "KEYMAP=${keymap}" >> /etc/vconsole.conf
 
-echo ${hostname} >> /etc/hostname
+echo "${hostname}" >> /etc/hostname
 
-echo 127.0.0.1  localhost >> /etc/hosts
-echo ::1		localhost >> /etc/hosts
-echo 127.0.1.1	${hostname} >> /etc/hosts
+echo "127.0.0.1  localhost" >> /etc/hosts
+echo "::1		localhost" >> /etc/hosts
+echo "127.0.1.1	${hostname}" >> /etc/hosts
 
-echo 'Set root password'
+echo "Set root password"
 passwd
 
 useradd -m ${username}
