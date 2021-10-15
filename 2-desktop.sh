@@ -19,10 +19,10 @@ declare -a packages=(
     pulseaudio-qt
     brave-bin
     typora
-    multimc-bin
+    #multimc-bin
     jdk11-openjdk
     visual-studio-code-bin
-    spotify
+    #spotify
     noto-fonts-emoji
     displaylink
     evdi-git
@@ -39,5 +39,5 @@ do
    yay -S $i --needed --noconfirm
 done
 
-sudo systemctl enable displaylink
+#sudo systemctl enable displaylink
 sudo systemctl enable sddm
