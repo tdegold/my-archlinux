@@ -15,5 +15,5 @@ rm -rf yay
 
 yay -S --needed --noconfirm - < applications.txt
 
-#sudo systemctl enable displaylink
+sudo systemctl enable displaylink
 sudo systemctl enable sddm
