@@ -1,0 +1,11 @@
+terminator
+brave-bin
+typora
+multimc-bin
+displaylink
+evdi-git
+visual-studio-code-bin
+spotify
+pcmanfm-qt
+xorg
+plasma

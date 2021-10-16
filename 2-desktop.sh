@@ -13,24 +13,7 @@ makepkg -si --noconfirm
 cd ..
 rm -rf yay
 
-declare -a packages=(
-    terminator
-    brave-bin
-    typora
-    multimc-bin
-    displaylink
-    evdi-git
-    visual-studio-code-bin
-    spotify
-    pcmanfm-qt
-    xorg
-    plasma
-)
-
-for i in "${packages[@]}"
-do
-   yay -S --needed --noconfirm $i
-done
+yay -S --needed --noconfirm - < applications.txt
 
 #sudo systemctl enable displaylink
 sudo systemctl enable sddm
