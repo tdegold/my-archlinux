@@ -27,3 +27,5 @@ jdk11-openjdk
 noto-fonts-emoji
 vlc
 git
+htop
+neofetch
