@@ -39,7 +39,7 @@ useradd -m ${username}
 echo "##################################"
 echo "# Set password for non-root user #"
 echo "##################################"
-passwd tim
+passwd ${username}
 usermod -aG wheel ${username}
 EDITOR=vim visudo
 
