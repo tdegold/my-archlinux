@@ -6,15 +6,15 @@
 # Contributors: Tim Degold
 
 # variables #
-disk='/dev/sda'
-disk_sufix=''
+disk="/dev/sda"
+disk_sufix=""
 
 timedatectl set-ntp true
 
-echo 'label: gpt
-      size=500MiB, type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B, name="efi"
-      type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, name="arch_root"
-      ' | sfdisk --force $disk
+echo "label: gpt
+      size=500MiB, type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B, name='efi'
+      type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, name='arch_root'
+      " | sfdisk --force $disk
 
 mkfs.fat -F32 ${disk}${disk_sufix}1
 mkfs.ext4 ${disk}${disk_sufix}2

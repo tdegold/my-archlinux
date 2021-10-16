@@ -15,28 +15,21 @@ rm -rf yay
 
 declare -a packages=(
     terminator
-    pulseaudio
-    pulseaudio-qt
     brave-bin
     typora
-    #multimc-bin
-    jdk11-openjdk
-    visual-studio-code-bin
-    #spotify
-    noto-fonts-emoji
+    multimc-bin
     displaylink
     evdi-git
+    visual-studio-code-bin
+    spotify
     pcmanfm-qt
-    vlc
-    git
     xorg
     plasma
-    sddm
 )
 
 for i in "${packages[@]}"
 do
-   yay -S $i --needed --noconfirm
+   yay -S --needed --noconfirm $i
 done
 
 #sudo systemctl enable displaylink
