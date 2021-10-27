@@ -43,6 +43,8 @@ passwd ${username}
 usermod -aG wheel ${username}
 EDITOR=vim 
 
+su ${username}
+
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
@@ -51,10 +53,10 @@ rm -rf yay
 
 yay -S --needed --noconfirm - < pkglist.txt
 
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-systemctl enable tlp
-systemctl enable NetworkManager
+sudo systemctl enable tlp
+sudo systemctl enable NetworkManager
 sudo systemctl enable displaylink
 sudo systemctl enable sddm
