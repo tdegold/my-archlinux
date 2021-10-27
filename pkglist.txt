@@ -22,6 +22,7 @@ acpi_call
 terminus-font
 tlp
 pulseaudio
+pulseaudio-alsa
 pulseaudio-qt
 jdk11-openjdk
 noto-fonts-emoji
@@ -29,3 +30,14 @@ vlc
 git
 htop
 neofetch
+terminator
+brave-bin
+typora
+multimc-bin
+displaylink
+evdi-git
+visual-studio-code-bin
+spotify
+pcmanfm-qt
+xorg
+plasma

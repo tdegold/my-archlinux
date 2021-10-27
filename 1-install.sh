@@ -41,12 +41,20 @@ echo "# Set password for non-root user #"
 echo "##################################"
 passwd ${username}
 usermod -aG wheel ${username}
-EDITOR=vim visudo
+EDITOR=vim 
 
-pacman -S --needed --noconfirm - < pkglist.txt
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ..
+rm -rf yay
+
+yay -S --needed --noconfirm - < pkglist.txt
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable tlp
 systemctl enable NetworkManager
+sudo systemctl enable displaylink
+sudo systemctl enable sddm

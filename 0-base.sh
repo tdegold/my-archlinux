@@ -6,7 +6,9 @@
 # Contributors: Tim Degold
 
 # variables #
-disk="/dev/sda"
+echo "Choose your disk"
+lsblk
+read disk
 disk_sufix=""
 
 timedatectl set-ntp true
